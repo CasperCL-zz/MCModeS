@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/list_item_world_imagemode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cd_mode_image"
+        android:src="@drawable/pickaxe" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" 
+            android:layout_toRightOf="@id/list_item_world_imagemode"
+            android:layout_marginLeft="25dp">
+
+        <TextView
+            android:id="@+id/list_item_world_worldname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="My World"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" 
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/list_item_world_lastplayed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/list_item_world_worldname"
+            android:text="Last played:"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+</RelativeLayout>

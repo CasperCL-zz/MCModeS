@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ModeS</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- Buttons -->
+    <string name="btn_select_map">Select Map</string>
+    <string name="btn_switch_last">Switch Last</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_splash_image">SplashImage</string>
+    <string name="cd_pickaxe_image">Pickaxe</string>
+    <string name="cd_mode_image">Pickaxe</string>
+    
+    <!-- File/Dir names -->
+    <string name="level_cache_dir">_LevelCache</string>
+    <string name="levelFileName">level.dat</string>
+    
+    <string name="last_played">Last played</string>
+    
+    <string name="title_activity_world_list">Select your world</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

@@ -1,0 +1,13 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/mc_splash_bg"
+        android:background="@color/green_light"
+        android:contentDescription="@string/cd_splash_image" >
+    </ImageView>
+
+</RelativeLayout>
