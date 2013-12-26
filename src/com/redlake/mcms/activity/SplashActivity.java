@@ -1,6 +1,7 @@
 package com.redlake.mcms.activity;
 
 import com.redlake.mcmodeswitcher.R;
+import com.redlake.mcms.util.Typefaces;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +13,8 @@ public class SplashActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_splash);
+		
+		Typefaces.setup(this);
 
 		Thread timer = new Thread(new Runnable() {
 

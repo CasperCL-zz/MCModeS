@@ -18,11 +18,18 @@ public class LevelController {
 
 	public final File WORLDS_ROOT;
 	public final Context context;
+	public static LevelController instance;
 
-	public LevelController(Context context) {
+	private LevelController(Context context) {
 		WORLDS_ROOT = new File(Environment.getExternalStorageDirectory()
 				.getAbsolutePath() + "/games/com.mojang/minecraftWorlds/");
 		this.context = context;
+	}
+
+	public static LevelController getInstance(Context context) {
+		if (instance == null)
+			instance = new LevelController(context);
+		return instance;
 	}
 
 	public List<Level> getLevels() throws IOException {
@@ -49,19 +56,41 @@ public class LevelController {
 	/**
 	 * Switches between modes.
 	 * 
-	 * @param level the level to switch
-	 * @param newMode the new mode. Either 0 or 1. 0 is survival and 1 is creative.
+	 * @param level
+	 *            the level to switch
+	 * @param newMode
+	 *            the new mode. Either 0 or 1. 0 is survival and 1 is creative.
 	 * @throws IOException
 	 */
-	public void switchMode(Level level, int newMode) throws IOException {
-		if (newMode == 0) { // Survival
-			level.getPlayer().getAbilities().setSurvival();
-		} else if (newMode == 1) {
+	public Level toggleMode(Level level) throws IOException {
+		if (level.getGameType() == 0 && level.getPlayer() != null) { // Survival
 			level.getPlayer().getAbilities().setCreative();
-		} else
-			return;
+			level.setGameType(1);
+		} else if (level.getGameType() == 1 && level.getPlayer() != null) {
+			level.getPlayer().getAbilities().setSurvival();
+			level.setGameType(0);
+			level.setSpawnMobs(true);
+		}
 
 		LevelDataConverter.write(level, level.getRootDirectory());
+		return level;
 	}
 
+	
+	/**
+	 * Switches between modes.
+	 * 
+	 * @param level
+	 *            the level to switch
+	 * @param newMode
+	 *            the new mode. Either 0 or 1. 0 is survival and 1 is creative.
+	 * @throws IOException
+	 */
+	public Level toggleMode(File levelFile) throws IOException {
+		Level level = LevelDataConverter.read(levelFile);
+		level.setRootDirectory(levelFile);
+		
+		return toggleMode(level);
+	}
+	
 }
