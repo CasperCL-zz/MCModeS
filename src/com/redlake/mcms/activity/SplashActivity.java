@@ -2,6 +2,7 @@ package com.redlake.mcms.activity;
 
 import com.redlake.mcmodeswitcher.R;
 import com.redlake.mcms.util.Typefaces;
+import com.testflightapp.lib.TestFlight;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +12,8 @@ public class SplashActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		TestFlight.takeOff(this.getApplication(), "f9aa085d-0cc8-4525-b942-a5e2e301f402");
+		
 		setContentView(R.layout.activity_splash);
 		
 		Typefaces.setup(this);

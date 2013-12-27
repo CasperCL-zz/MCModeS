@@ -35,7 +35,7 @@
             android:background="#FFFFFF"
             android:padding="15dp"
             android:text="@string/btn_select_map"
-            android:textColor="@color/green_dark"
+            android:textColor="@color/green_light"
             android:onClick="selectMapButtonClicked" />
 
         <Button
@@ -48,8 +48,9 @@
             android:background="#FFFFFF"
             android:padding="15dp"
             android:text="@string/btn_switch_last"
-            android:textColor="@color/green_dark"
-            android:onClick="switchLastButtonClicked" />
+            android:textColor="@color/green_light"
+            android:onClick="switchLastButtonClicked"
+             />
         
     </RelativeLayout>
 

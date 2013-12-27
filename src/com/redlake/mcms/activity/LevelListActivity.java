@@ -147,7 +147,7 @@ public class LevelListActivity extends Activity implements
 		}
 
 		if (success) {
-			Toast.makeText(LevelListActivity.this, "Switched map",
+			Toast.makeText(LevelListActivity.this, getString(R.string.switched_map),
 					Toast.LENGTH_SHORT).show();
 			adapter.notifyDataSetChanged();
 

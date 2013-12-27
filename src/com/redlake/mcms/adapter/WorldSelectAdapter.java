@@ -8,8 +8,10 @@ import java.util.TimeZone;
 import net.zhuoweizhang.pocketinveditor.Level;
 
 import com.redlake.mcmodeswitcher.R;
+import com.redlake.mcms.util.Typefaces;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +56,8 @@ public class WorldSelectAdapter extends ArrayAdapter<Level> {
 		    int month = calendar.get(Calendar.MONTH);
 		    int year = calendar.get(Calendar.YEAR);
 
+		    worldTitleTV.setTypeface(Typefaces.KEEP_CALM_MEDIUM);
+		    lastPlayedTV.setTypeface(Typefaces.KEEP_CALM_MEDIUM);
 		    
 		    String lastPlayedString = day + "-" + month + "-" + year;
 		    

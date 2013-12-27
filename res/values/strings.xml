@@ -15,20 +15,19 @@
     <string name="cd_splash_image">SplashImage</string>
     <string name="cd_pickaxe_image">Pickaxe</string>
     <string name="cd_mode_image">Pickaxe</string>
-    
+
     <!-- File/Dir names -->
     <string name="level_cache_dir">_LevelCache</string>
     <string name="levelFileName">level.dat</string>
-    
+
     <!-- Settings -->
     <string name="settings_file_name">PREFS_NAME</string>
-    
     <string name="last_played">Last played</string>
     <string name="error1">Something went wrong. Try again.</string>
     <string name="error2">Did you install Minecraft Pocket Edition?</string>
-    
-    
+    <string name="error3">First select a map to switch</string>
+    <string name="switch_last_success">Switched last map</string>
     <string name="title_activity_world_list">Select your world</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="switched_map">Switched mode</string>
 
 </resources>
