@@ -1,5 +1,6 @@
 package com.redlake.mcms.contoller;
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.redlake.mcmodeswitcher.R;
+import com.testflightapp.lib.TestFlight;
+
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
@@ -44,8 +47,14 @@ public class LevelController {
 			File levelFile = new File(WORLDS_ROOT.getAbsolutePath() + "/"
 					+ folderName + "/"
 					+ context.getString(R.string.levelFileName));
-
-			Level level = LevelDataConverter.read(levelFile);
+			Level level = null;
+			try {
+				level = LevelDataConverter.read(levelFile);
+			} catch (EOFException exc) {
+				TestFlight.log("Exception occured: " + exc.getMessage());
+				exc.printStackTrace();
+				continue;
+			}
 			level.setRootDirectory(levelFile);
 			levels.add(level);
 		}
@@ -76,7 +85,6 @@ public class LevelController {
 		return level;
 	}
 
-	
 	/**
 	 * Switches between modes.
 	 * 
@@ -89,8 +97,8 @@ public class LevelController {
 	public Level toggleMode(File levelFile) throws IOException {
 		Level level = LevelDataConverter.read(levelFile);
 		level.setRootDirectory(levelFile);
-		
+
 		return toggleMode(level);
 	}
-	
+
 }

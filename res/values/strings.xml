@@ -24,7 +24,8 @@
     <string name="settings_file_name">PREFS_NAME</string>
     
     <string name="last_played">Last played</string>
-    <string name="error1">"Something went wrong. Try again."</string>
+    <string name="error1">Something went wrong. Try again.</string>
+    <string name="error2">Did you install Minecraft Pocket Edition?</string>
     
     
     <string name="title_activity_world_list">Select your world</string>

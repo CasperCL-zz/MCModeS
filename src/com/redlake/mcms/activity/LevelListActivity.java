@@ -1,5 +1,6 @@
 package com.redlake.mcms.activity;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ import com.redlake.mcmodeswitcher.R;
 import com.redlake.mcms.adapter.WorldSelectAdapter;
 import com.redlake.mcms.contoller.LevelController;
 import com.redlake.mcms.util.Typefaces;
+import com.testflightapp.lib.TestFlight;
 
 public class LevelListActivity extends Activity implements
 		AdapterView.OnItemClickListener {
@@ -69,11 +71,16 @@ public class LevelListActivity extends Activity implements
 
 		try {
 			levels.addAll(LevelController.getInstance(this).getLevels());
+		} catch (FileNotFoundException exc) {
+			Toast.makeText(LevelListActivity.this,
+					getString(R.string.error2), Toast.LENGTH_SHORT)
+					.show();
 		} catch (IOException exc) {
 			exc.printStackTrace();
 			Toast.makeText(LevelListActivity.this,
 					getString(R.string.error1), Toast.LENGTH_SHORT)
 					.show();
+			TestFlight.log("Exception occured: " + exc.getMessage());
 		}
 
 		if (levels.size() > 0) {
@@ -124,6 +131,8 @@ public class LevelListActivity extends Activity implements
 	@Override
 	public void onItemClick(AdapterView<?> parent, final View view,
 			int position, long id) {
+		TestFlight.passCheckpoint("Switched map by selecting");
+		
 		Level level = levels.get(position - 1);
 		boolean success = false;
 

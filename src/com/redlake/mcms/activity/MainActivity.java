@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import com.redlake.mcmodeswitcher.R;
 import com.redlake.mcms.contoller.LevelController;
+import com.testflightapp.lib.TestFlight;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -31,6 +32,9 @@ public class MainActivity extends Activity {
 	}
 
 	public void switchLastButtonClicked(View view) {
+
+		TestFlight.passCheckpoint("Switched map by quickmode");
+		
 		// Restore preferences
 		SharedPreferences settings = getSharedPreferences(
 				getString(R.string.settings_file_name), 0);
