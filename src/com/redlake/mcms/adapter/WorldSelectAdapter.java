@@ -1,5 +1,6 @@
 package com.redlake.mcms.adapter;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -48,20 +49,14 @@ public class WorldSelectAdapter extends ArrayAdapter<Level> {
 		    
 		    worldTitleTV.setText(level.getLevelName());
 		    
-
-		    Calendar calendar = Calendar.getInstance();
-		    calendar.setTimeInMillis(level.getLastPlayed() * 1000);
 		    
-		    int day = calendar.get(Calendar.DAY_OF_MONTH);
-		    int month = calendar.get(Calendar.MONTH);
-		    int year = calendar.get(Calendar.YEAR);
+		    Date lastPlayedDate = new Date(level.getLastPlayed() * 1000);
+		    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
 		    worldTitleTV.setTypeface(Typefaces.KEEP_CALM_MEDIUM);
 		    lastPlayedTV.setTypeface(Typefaces.KEEP_CALM_MEDIUM);
 		    
-		    String lastPlayedString = day + "-" + month + "-" + year;
-		    
-		    lastPlayedTV.setText(context.getString(R.string.last_played) + ": " + lastPlayedString);
+		    lastPlayedTV.setText(context.getString(R.string.last_played) + ": " + formatter.format(lastPlayedDate));
 		    
 		    
 		    return rowView;

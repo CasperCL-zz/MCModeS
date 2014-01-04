@@ -42,7 +42,7 @@ public class LevelController {
 		List<Level> levels = new ArrayList<Level>();
 
 		for (String folderName : WORLDS_ROOT.list()) {
-			if (folderName.equals(context.getString(R.string.level_cache_dir)))
+			if (folderName.startsWith("_"))
 				continue;
 			File levelFile = new File(WORLDS_ROOT.getAbsolutePath() + "/"
 					+ folderName + "/"

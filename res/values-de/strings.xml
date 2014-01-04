@@ -30,5 +30,6 @@
 
     <string name="title_activity_world_list">Wählen Sie Ihre Welt</string>
     <string name="switched_map">Mode geändert</string>
+    <string name="no_worlds_found">Sie haben noch keine Welten Sie Pocket Edition</string>
 
 </resources>

@@ -29,5 +29,6 @@
     <string name="switch_last_success">Switched dernière carte</string>
     <string name="title_activity_world_list">Sélectionnez votre monde</string>
     <string name="switched_map">Switched monde</string>
+    <string name="no_worlds_found">Vous n\'avez pas de mondes à vous Pocket Edition</string>
 
 </resources>

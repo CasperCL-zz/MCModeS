@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/activity_vertical_margin" 
-        android:text="You don&apos;t have any maps in you Pocket edition" 
+        android:text="@string/no_worlds_found" 
         android:textSize="30sp"
         android:textColor="#FFFFFF"
         android:gravity="center"/>

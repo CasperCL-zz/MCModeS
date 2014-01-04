@@ -30,5 +30,6 @@
     <string name="switch_last_success">Laatste map gewisseld</string>
 
     <string name="title_activity_world_list">Selecteer je wereld</string>
+    <string name="no_worlds_found">Je hebt nog geen werelden in je Pocket Edition</string>
 
 </resources>
