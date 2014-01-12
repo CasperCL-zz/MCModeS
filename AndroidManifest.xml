@@ -44,6 +44,11 @@
             android:label="@string/title_activity_world_list"
             android:theme="@style/FullscreenTheme" >
         </activity>
+        <activity
+            android:name="com.redlake.mcms.fragment.TutorialFragment"
+            android:label="@string/title_activity_tutorial" 
+            android:theme="@style/NoActionBar">
+        </activity>
     </application>
 
 </manifest>

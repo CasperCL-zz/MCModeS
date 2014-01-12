@@ -32,4 +32,12 @@
     <string name="switched_map">Mode geändert</string>
     <string name="no_worlds_found">Sie haben noch keine Welten Sie Pocket Edition</string>
 
+        <!-- Tutorial -->
+    <string name="tutorial_1">Hallo, und herzlich willkommen auf MCSwitcher! MCSwitcher ist wirklich einfach zu benutzen, wenn Sie wissen wie;)</string>
+    <string name="tutorial_2">Wenn Sie wechseln möchten, zuerst das Spiel zu beenden um Titel</string>
+    <string name="tutorial_3">Dann gehen Sie zu MCSwitcher und wählen Sie eine Karte!</string>
+    <string name="start_switching">Start Switching</string>
+    <string name="swipe_left">Swipe left!</string>
+    <string name="title_activity_slide_fragment">SlideFragment</string>
+    
 </resources>

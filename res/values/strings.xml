@@ -30,5 +30,15 @@
     <string name="title_activity_world_list">Select your world</string>
     <string name="switched_map">Switched mode</string>
     <string name="no_worlds_found">You don\&apos;t have any maps in you Pocket Edition</string>
+    <string name="title_activity_tutorial">TutorialActivity</string>
+    <string name="hello_world">Hello world!</string>
 
+    <!-- Tutorial -->
+    <string name="tutorial_1">Hi, and welcome to MCSwitcher! MCSwitcher is really easy to use once you know how to ;)</string>
+    <string name="tutorial_2">"When you want to switch, first quit the game to title"</string>
+    <string name="tutorial_3">"Then go to MCSwitcher and select a map, you are good to go!"</string>
+    <string name="start_switching">Start Switching</string>
+    <string name="swipe_left">Swipe left!</string>
+    <string name="title_activity_slide_fragment">SlideFragment</string>
+    
 </resources>

@@ -28,8 +28,15 @@
     <!-- Toasts -->
     <string name="switched_map">Map gewisseld</string>
     <string name="switch_last_success">Laatste map gewisseld</string>
-
     <string name="title_activity_world_list">Selecteer je wereld</string>
     <string name="no_worlds_found">Je hebt nog geen werelden in je Pocket Edition</string>
+
+    <!-- Tutorial -->
+    <string name="tutorial_1">Hey, dit is MCSwitcher! MCSwitcher is heel makkelijk te gebruiken als je weet hoe ;)</string>
+    <string name="tutorial_2">Voordat je switcht druk je eerst \'Quit to title\' in de game</string>
+    <string name="tutorial_3">"Ga dan naar MCSwitcher en selecteer een map en hij wordt gewisseld!"</string>
+    <string name="start_switching">Start Switching</string>
+    <string name="swipe_left">Swipe links!</string>
+    <string name="title_activity_slide_fragment">SlideFragment</string>
 
 </resources>
