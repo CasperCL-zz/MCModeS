@@ -54,6 +54,8 @@ public class LevelController {
 				TestFlight.log("Exception occured: " + exc.getMessage());
 				exc.printStackTrace();
 				continue;
+			} catch(Exception exc) {
+				exc.printStackTrace();
 			}
 			level.setRootDirectory(levelFile);
 			levels.add(level);
