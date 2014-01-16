@@ -54,11 +54,14 @@ public class LevelController {
 				TestFlight.log("Exception occured: " + exc.getMessage());
 				exc.printStackTrace();
 				continue;
-			} catch(Exception exc) {
+			} catch (Exception exc) {
 				exc.printStackTrace();
+				continue;
 			}
-			level.setRootDirectory(levelFile);
-			levels.add(level);
+			if (level != null) {
+				level.setRootDirectory(levelFile);
+				levels.add(level);
+			}
 		}
 
 		return levels;
