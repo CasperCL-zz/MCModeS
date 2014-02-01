@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MCSwitcher</string>
+    <string name="action_settings">Institutionen</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+    <!-- Buttons -->
+    <string name="btn_select_map">Eine Welt wählen</string>
+    <string name="btn_switch_last">Letzten Welt ändern</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_splash_image">SplashImage</string>
+    <string name="cd_pickaxe_image">Pickaxe</string>
+    <string name="cd_mode_image">Pickaxe</string>
+
+    <!-- File/Dir names -->
+    <string name="level_cache_dir">_LevelCache</string>
+    <string name="levelFileName">level.dat</string>
+
+    <!-- Settings -->
+    <string name="settings_file_name">PREFS_NAME</string>
+    <string name="last_played">Zuletzt gespielt</string>
+    <!-- Errors -->
+    <string name="error1">Es wurde etwas schief gegangen. Versuchen Sie es erneut.</string>
+    <string name="error2">Haben Sie Minecraft Pocket Edition installiert?</string>
+    <string name="error3">Zuerst wählen Sie einen Ordner zu teilen</string>
+    <!-- Toasts -->
+    <string name="switch_last_success">Die letzten Welt ist geändert</string>
+
+    <string name="title_activity_world_list">Wählen Sie Ihre Welt</string>
+    <string name="switched_map">Mode geändert</string>
+    <string name="no_worlds_found">Sie haben noch keine Welten Sie Pocket Edition</string>
+
+        <!-- Tutorial -->
+    <string name="tutorial_1">Hallo, und herzlich willkommen auf MCSwitcher! MCSwitcher ist wirklich einfach zu benutzen, wenn Sie wissen wie;)</string>
+    <string name="tutorial_2">Wenn Sie wechseln möchten, zuerst das Spiel zu beenden um Titel</string>
+    <string name="tutorial_3">Dann gehen Sie zu MCSwitcher und wählen Sie eine Karte!</string>
+    <string name="start_switching">Start Switching</string>
+    <string name="swipe_left">Swipe left!</string>
+    <string name="title_activity_slide_fragment">SlideFragment</string>
+    
+</resources>

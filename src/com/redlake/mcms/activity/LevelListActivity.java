@@ -1,11 +1,13 @@
 package com.redlake.mcms.activity;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import net.zhuoweizhang.pocketinveditor.Level;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -13,32 +15,43 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.redlake.mcmodeswitcher.R;
 import com.redlake.mcms.adapter.WorldSelectAdapter;
 import com.redlake.mcms.contoller.LevelController;
+import com.redlake.mcms.util.Typefaces;
+import com.testflightapp.lib.TestFlight;
 
 public class LevelListActivity extends Activity implements
 		AdapterView.OnItemClickListener {
 
 	private WorldSelectAdapter adapter;
 	private List<Level> levels;
-	private LevelController levelController;
+	private TextView noWorldsTV;
+	private ListView listview;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_level_list);
 
-		levelController = new LevelController(this);
 		levels = new ArrayList<Level>();
 		
+		initView();
 		initListAdapter();
 	}
 
+	public void initView(){
+		noWorldsTV = (TextView) findViewById(R.id.world_select_noworldsTV);
+		noWorldsTV.setTypeface(Typefaces.KEEP_CALM_MEDIUM);
+		
+		noWorldsTV.setPadding(pixelsToDPI(25), (int)(pixelsToDPI(25) + getActionbarHeight()), pixelsToDPI(25), 0);
+	}
+	
 	public void initListAdapter() {
-		final ListView listview = (ListView) findViewById(R.id.world_select_listview);
+		listview = (ListView) findViewById(R.id.world_select_listview);
 
 		adapter = new WorldSelectAdapter(this,
 				android.R.layout.simple_list_item_1, levels);
@@ -57,11 +70,27 @@ public class LevelListActivity extends Activity implements
 		levels.clear();
 
 		try {
-			levels.addAll(levelController.getLevels());
+			levels.addAll(LevelController.getInstance(this).getLevels());
+		} catch (FileNotFoundException exc) {
+			Toast.makeText(LevelListActivity.this,
+					getString(R.string.error2), Toast.LENGTH_SHORT)
+					.show();
 		} catch (IOException exc) {
 			exc.printStackTrace();
+			Toast.makeText(LevelListActivity.this,
+					getString(R.string.error1), Toast.LENGTH_SHORT)
+					.show();
+			TestFlight.log("Exception occured: " + exc.getMessage());
 		}
-		
+
+		if (levels.size() > 0) {
+			noWorldsTV.setVisibility(View.GONE);
+			listview.setVisibility(View.VISIBLE);
+		} else {
+			noWorldsTV.setVisibility(View.VISIBLE);
+			listview.setVisibility(View.GONE);
+		}
+
 		adapter.notifyDataSetInvalidated();
 	}
 
@@ -71,12 +100,7 @@ public class LevelListActivity extends Activity implements
 	 * @return View to be used as header view
 	 */
 	public View getHeaderView() {
-		double actionBarHeight = 0;
-		TypedValue tv = new TypedValue();
-		if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
-			actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,
-					getResources().getDisplayMetrics());
-		}
+		double actionBarHeight = getActionbarHeight();
 
 		LayoutInflater inflater = getLayoutInflater();
 		View headerView = inflater.inflate(R.layout.empty, null);
@@ -89,32 +113,50 @@ public class LevelListActivity extends Activity implements
 
 		return headerView;
 	}
+	
+	public double getActionbarHeight() {
+		TypedValue tv = new TypedValue();
+		if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+			return TypedValue.complexToDimensionPixelSize(tv.data,
+					getResources().getDisplayMetrics());
+		}
+		return 0;
+	}
+	
+	public int pixelsToDPI(double sizeInDp){
+		float scale = getResources().getDisplayMetrics().density;
+		return (int)(sizeInDp*scale + 0.5f);
+	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, final View view,
 			int position, long id) {
+		TestFlight.passCheckpoint("Switched map by selecting");
+		
 		Level level = levels.get(position - 1);
-
-		int newMode = -1;
-		if (level.getGameType() == 0) {
-			newMode = 1;
-		} else {
-			newMode = 0;
-		}
-		level.setGameType(newMode);
+		boolean success = false;
 
 		try {
-			levelController.switchMode(level, newMode);
-
-			Toast.makeText(LevelListActivity.this, "Switched map",
-					Toast.LENGTH_SHORT).show();
-			adapter.notifyDataSetChanged();
+			LevelController.getInstance(this).toggleMode(level);
+			success = true; // keep code out of try/catch for performance
 		} catch (IOException exc) {
 			exc.printStackTrace();
 
-			Toast.makeText(LevelListActivity.this,
-					"Something went wrong. Try again.", Toast.LENGTH_SHORT)
-					.show();
+			Toast.makeText(LevelListActivity.this, getString(R.string.error1),
+					Toast.LENGTH_SHORT).show();
+		}
+
+		if (success) {
+			Toast.makeText(LevelListActivity.this, getString(R.string.switched_map),
+					Toast.LENGTH_SHORT).show();
+			adapter.notifyDataSetChanged();
+
+			SharedPreferences settings = getSharedPreferences(
+					getString(R.string.settings_file_name), 0);
+			SharedPreferences.Editor editor = settings.edit();
+			editor.putString("last_switched_level_file", level
+					.getRootDirectory().getAbsolutePath());
+			editor.commit();
 		}
 	}
 }

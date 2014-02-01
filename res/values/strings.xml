@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ModeS</string>
+    <string name="app_name">MCSwitcher</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
@@ -15,14 +15,30 @@
     <string name="cd_splash_image">SplashImage</string>
     <string name="cd_pickaxe_image">Pickaxe</string>
     <string name="cd_mode_image">Pickaxe</string>
-    
+
     <!-- File/Dir names -->
     <string name="level_cache_dir">_LevelCache</string>
     <string name="levelFileName">level.dat</string>
-    
+
+    <!-- Settings -->
+    <string name="settings_file_name">PREFS_NAME</string>
     <string name="last_played">Last played</string>
-    
+    <string name="error1">Something went wrong. Try again.</string>
+    <string name="error2">Did you install Minecraft Pocket Edition?</string>
+    <string name="error3">First select a map to switch</string>
+    <string name="switch_last_success">Switched last map</string>
     <string name="title_activity_world_list">Select your world</string>
+    <string name="switched_map">Switched mode</string>
+    <string name="no_worlds_found">You don\&apos;t have any maps in you Pocket Edition</string>
+    <string name="title_activity_tutorial">TutorialActivity</string>
     <string name="hello_world">Hello world!</string>
 
+    <!-- Tutorial -->
+    <string name="tutorial_1">Hi, and welcome to MCSwitcher! MCSwitcher is really easy to use once you know how to ;)</string>
+    <string name="tutorial_2">"When you want to switch, first quit the game to title"</string>
+    <string name="tutorial_3">"Then go to MCSwitcher and select a map, you are good to go!"</string>
+    <string name="start_switching">Start Switching</string>
+    <string name="swipe_left">Swipe left!</string>
+    <string name="title_activity_slide_fragment">SlideFragment</string>
+    
 </resources>

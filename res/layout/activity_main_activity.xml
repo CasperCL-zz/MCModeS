@@ -15,42 +15,40 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true" >
 
-        <ImageView 
+        <ImageView
             android:id="@+id/main_pickaxe_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/pickaxe"
             android:layout_centerHorizontal="true"
             android:layout_margin="10dp"
             android:contentDescription="@string/cd_pickaxe_image"
-            />
-        
+            android:src="@drawable/pickaxe" />
+
         <Button
             android:id="@+id/main_select_map_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/main_pickaxe_image"
+            android:layout_centerHorizontal="true"
             android:layout_margin="20dp"
             android:background="#FFFFFF"
+            android:onClick="selectMapButtonClicked"
             android:padding="15dp"
             android:text="@string/btn_select_map"
-            android:textColor="@color/green_dark"
-            android:onClick="selectMapButtonClicked" />
+            android:textColor="@color/green_light" />
 
         <Button
             android:id="@+id/main_switch_last_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/main_select_map_button"
+            android:layout_centerHorizontal="true"
             android:layout_margin="20dp"
             android:background="#FFFFFF"
+            android:onClick="switchLastButtonClicked"
             android:padding="15dp"
             android:text="@string/btn_switch_last"
-            android:textColor="@color/green_dark"
-            android:onClick="switchLastButtonClicked" />
-        
+            android:textColor="@color/green_light" />
     </RelativeLayout>
 
 </RelativeLayout>

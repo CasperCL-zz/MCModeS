@@ -1,5 +1,6 @@
 package com.redlake.mcms.adapter;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -8,8 +9,10 @@ import java.util.TimeZone;
 import net.zhuoweizhang.pocketinveditor.Level;
 
 import com.redlake.mcmodeswitcher.R;
+import com.redlake.mcms.util.Typefaces;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,18 +49,14 @@ public class WorldSelectAdapter extends ArrayAdapter<Level> {
 		    
 		    worldTitleTV.setText(level.getLevelName());
 		    
+		    
+		    Date lastPlayedDate = new Date(level.getLastPlayed() * 1000);
+		    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
-		    Calendar calendar = Calendar.getInstance();
-		    calendar.setTimeInMillis(level.getLastPlayed() * 1000);
+		    worldTitleTV.setTypeface(Typefaces.KEEP_CALM_MEDIUM);
+		    lastPlayedTV.setTypeface(Typefaces.KEEP_CALM_MEDIUM);
 		    
-		    int day = calendar.get(Calendar.DAY_OF_MONTH);
-		    int month = calendar.get(Calendar.MONTH);
-		    int year = calendar.get(Calendar.YEAR);
-
-		    
-		    String lastPlayedString = day + "-" + month + "-" + year;
-		    
-		    lastPlayedTV.setText(context.getString(R.string.last_played) + ": " + lastPlayedString);
+		    lastPlayedTV.setText(context.getString(R.string.last_played) + ": " + formatter.format(lastPlayedDate));
 		    
 		    
 		    return rowView;

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MCSwitcher</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- Buttons -->
+    <string name="btn_select_map">Sélectionnez un monde</string>
+    <string name="btn_switch_last">Mettez Dernière monde</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_splash_image">SplashImage</string>
+    <string name="cd_pickaxe_image">Pickaxe</string>
+    <string name="cd_mode_image">Pickaxe</string>
+
+    <!-- File/Dir names -->
+    <string name="level_cache_dir">_LevelCache</string>
+    <string name="levelFileName">level.dat</string>
+
+    <!-- Settings -->
+    <string name="settings_file_name">PREFS_NAME</string>
+    <string name="last_played">Dernière joué</string>
+    <string name="error1">Quelque chose s\'est mal passé. Essayez à nouveau.</string>
+    <string name="error2">Avez-vous installé Minecraft Pocket Edition?</string>
+    <string name="error3">Sélectionnez d\'abord une carte de commutateur</string>
+    <string name="switch_last_success">Switched dernière carte</string>
+    <string name="title_activity_world_list">Sélectionnez votre monde</string>
+    <string name="switched_map">Switched monde</string>
+    <string name="no_worlds_found">Vous n\'avez pas de mondes à vous Pocket Edition</string>
+    
+        <!-- Tutorial -->
+    <string name="tutorial_1">Salut et bienvenue à MCSwitcher! MCSwitcher est vraiment facile à utiliser une fois que vous savez comment;)</string>
+    <string name="tutorial_2">"Lorsque vous souhaitez passer, d'abord quitter le jeu à titre</string>
+    <string name="tutorial_3">"Ensuite, allez à MCSwitcher et sélectionner une carte, vous êtes bon pour vous!"</string>
+    <string name="start_switching">Start Switching</string>
+    <string name="swipe_left">Swipe left!</string>
+    <string name="title_activity_slide_fragment">SlideFragment</string>
+
+</resources>

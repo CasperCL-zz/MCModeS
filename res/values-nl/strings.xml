@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MCSwitcher</string>
+    <string name="action_settings">Instellingen</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+    <!-- Buttons -->
+    <string name="btn_select_map">Selecteer wereld</string>
+    <string name="btn_switch_last">Wissel laatste</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_splash_image">SplashImage</string>
+    <string name="cd_pickaxe_image">Pickaxe</string>
+    <string name="cd_mode_image">Pickaxe</string>
+
+    <!-- File/Dir names -->
+    <string name="level_cache_dir">_LevelCache</string>
+    <string name="levelFileName">level.dat</string>
+
+    <!-- Settings -->
+    <string name="settings_file_name">PREFS_NAME</string>
+    <string name="last_played">Laatst gespeeld</string>
+    <!-- Errors -->
+    <string name="error1">Erg ging iets mis. Probeer opnieuw</string>
+    <string name="error2">Heb je Minecraft Pocket Edition geinstalleerd?</string>
+    <string name="error3">Selecteer eerst een map om te wisselen</string>
+    <!-- Toasts -->
+    <string name="switched_map">Map gewisseld</string>
+    <string name="switch_last_success">Laatste map gewisseld</string>
+    <string name="title_activity_world_list">Selecteer je wereld</string>
+    <string name="no_worlds_found">Je hebt nog geen werelden in je Pocket Edition</string>
+
+    <!-- Tutorial -->
+    <string name="tutorial_1">Hey, dit is MCSwitcher! MCSwitcher is heel makkelijk te gebruiken als je weet hoe ;)</string>
+    <string name="tutorial_2">Voordat je switcht druk je eerst \'Quit to title\' in de game</string>
+    <string name="tutorial_3">"Ga dan naar MCSwitcher en selecteer een map en hij wordt gewisseld!"</string>
+    <string name="start_switching">Start Switching</string>
+    <string name="swipe_left">Swipe links!</string>
+    <string name="title_activity_slide_fragment">SlideFragment</string>
+
+</resources>
